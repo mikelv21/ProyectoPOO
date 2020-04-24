@@ -12,6 +12,10 @@ Autor: José Miguel Luna Vega A01706424
 
 using namespace std;
 
+//Es IMPORTANTE aclarar que los atributos de los sensores en la vida real se actualizaran
+//por si solos, pero para fines practicos de este proyecto se fijaran dichos valores pare demostrar 
+//su funcionamiento activo
+
 class Sensor{ 
 	
 	private:
