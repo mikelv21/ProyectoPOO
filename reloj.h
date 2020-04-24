@@ -12,14 +12,14 @@ Autor: José Miguel Luna Vega A01706424
 class Reloj: public Sensor{
 	
 	private:
-		
-		int hora;
+		 
+		int hora;                 //atributos especificos de los relojes
 		int minuto;
 		int segundos;
 		
 	public:
 		
-		Reloj();
+		Reloj();          //constructores
 		
 		Reloj(string _tipo, int _hora, int _minuto, int _segundos): Sensor(_tipo,0){
 			
@@ -29,7 +29,7 @@ class Reloj: public Sensor{
 			
 		}
 		
-		void get_data(){
+		void get_data(){         //metodo especifico del reloj el cual se sobreescribe al del sensor 
 			
 			cout<<"La hora es: "<<hora<<":" <<minuto<<":"<<segundos<<endl;
 			

@@ -13,22 +13,22 @@ class Frutal: public Planta{
 	
 	private:
 		
-		string fruto;
+		string fruto;        //atributos especificos de las plantas frutales
 		float maduracion;
 		
 	public: 
 		
 		Frutal();
 		
-		Frutal(string _id, string _tipo, float _tiempoR, float _frecR, string _fruto, float _maduracion)
+		Frutal(string _id, string _tipo, int _tiempoR, int _frecR, string _fruto, float _maduracion)
 		:Planta(_id,_tipo,_tiempoR,_frecR){
 		
 			fruto = _fruto;
 			maduracion = _maduracion;
 			
 		}
-		
-		void consultaMaduracion(){
+		 
+		void consultaMaduracion(){        //metodo unico de la planta frutal
 			
 			cout<<"El fruto es: "<<fruto<<endl;
 			cout<<"Tiempo para que madure: "<<10-maduracion*3<<endl;

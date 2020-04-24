@@ -14,16 +14,16 @@ class Planta{
 	
 	private: 
 		
-		string id;
+		string id;          //atributos importantes de cada planta
 		string tipo;
-		float tiempoRegado;
-		float frecuenciaRegado;
+		int tiempoRegado;
+		int frecuenciaRegado;
 		
 	public:
 		
-		Planta();
+		Planta();       //constructores
 		
-		Planta(string _id, string _tipo, float _tiempoR, float _frecR){
+		Planta(string _id, string _tipo, int _tiempoR, int _frecR){
 		
 			id = _id;
 			tipo = _tipo;
@@ -32,14 +32,29 @@ class Planta{
 			
 		}
 			 
-		void mostrarCaracteristicas(){
+		void mostrarCaracteristicas(){       //funcion que muestra caracteristicas generales del objeto
 			
 		cout<<"El id es: "<<id<<endl<<"La planta es una: "<<tipo<<endl;
 		cout<<"Tiempo Regado: "<<tiempoRegado<<endl<<"Frec. regado: "<< frecuenciaRegado<<endl;
 		
 		}
 		
-		//void crece();	
+		string get_id(){                            //getters
+			return id;
+		}
+		
+		string get_tipo(){
+			return tipo;
+		}
+		
+		int get_tiempoRegado(){
+			return tiempoRegado;
+		}
+		
+		int get_frecuenciaRegado(){
+			return frecuenciaRegado;
+		}
+
 };
 #endif
 

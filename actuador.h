@@ -9,19 +9,19 @@ Autor: José Miguel Luna Vega A01706424
 
 #include<iostream>
 
-using namespace std;
+using namespace std; 
 
-class Actuador{
+class Actuador{       //creacion de la clase actuador
 	
 	private:
 		
-		string nombre;
+		string nombre;    //atributos
 		string funcion;
 		
 	public:
 		
-		Actuador();
-		
+		Actuador();      //constructores
+		 
 		Actuador(string _nombre, string _funcion){
 			
 			nombre = _nombre;

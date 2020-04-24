@@ -18,7 +18,7 @@ class Bomba: public Actuador{
 		Bomba(string _nombre, string _funcion): Actuador(_nombre, _funcion){
 		}
 		
-		void bombeando(){
+		void bombeando(){        //metodo especifico de la clase bomba
 			
 			cout<<"La bomba esta activa."<<endl;
 			

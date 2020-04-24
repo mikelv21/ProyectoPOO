@@ -13,7 +13,7 @@ class Humedad: public Sensor{
 	
 	public:
 		
-		Humedad();
+		Humedad();        
 		
 		Humedad(string _tipo, float _data): Sensor(_tipo,_data){
 		}

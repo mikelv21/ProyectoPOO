@@ -12,16 +12,16 @@ Autor: José Miguel Luna Vega A01706424
 
 using namespace std;
 
-class Sensor{
+class Sensor{ 
 	
 	private:
 
-		string tipo;
+		string tipo;          //atributos y metodos generales de los sensores
 		float data;
 		
 	public:
 		
-		Sensor();
+		Sensor();   //constructores
 		
 		Sensor(string _tipo, float _data){
 			
@@ -30,7 +30,7 @@ class Sensor{
 			
 		}
 		
-		float get_data(){
+		float get_data(){       
 			
 			return data;
 			

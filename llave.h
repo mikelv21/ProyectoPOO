@@ -13,7 +13,7 @@ class Llave: public Actuador{
 	
 	private:
 		
-		string id;
+		string id;        
 	
 	public:
 		
@@ -25,7 +25,7 @@ class Llave: public Actuador{
 		
 		}
 		
-		void abrir(){
+		void abrir(){     //metodo especifico de la clase llave
 			
 			cout<<"La llave "<<id<<" esta abierta"<<endl;
 			
