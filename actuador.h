@@ -11,24 +11,25 @@ Autor: José Miguel Luna Vega A01706424
 
 using namespace std; 
 
-class Actuador{       //creacion de la clase actuador
+class Actuador{       //Creacion de la clase actuador
 	
 	private:
 		
-		string nombre;    //atributos
-		string funcion;
+		string nombre;    //Atributos
 		
 	public:
-		
-		Actuador();      //constructores
-		 
-		Actuador(string _nombre, string _funcion){
+			
+		Actuador(string _nombre){   //Constructor
 			
 			nombre = _nombre;
-			funcion = _funcion;
 			
 		}
-	
+		
+		Actuador(): nombre("Vacio"){}; //Constructor default
+		
+		string get_nombre(){
+			return nombre;
+		}
 };
 
 #endif

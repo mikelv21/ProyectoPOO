@@ -20,12 +20,12 @@ class Sensor{
 	
 	private:
 
-		string tipo;          //atributos y metodos generales de los sensores
+		string tipo;          //Atributos y Metodos generales de los sensores
 		float data;
 		
 	public:
 		
-		Sensor();   //constructores
+		Sensor(): tipo("vacio"), data(0) {};   //Constructor por default
 		
 		Sensor(string _tipo, float _data){
 			

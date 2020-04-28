@@ -17,9 +17,11 @@ class Llave: public Actuador{
 	
 	public:
 		
-		Llave();
+		Llave(): Actuador("Vacio"), id("Vacio"){};              //Constructor default
 		
-		Llave(string _nombre, string _funcion, string _id): Actuador(_nombre, _funcion){
+		Llave(string _id): Actuador("Vacio"), id(_id){};         //Constructor default
+		
+		Llave(string _nombre, string _id): Actuador(_nombre){
 		
 			id =_id;
 		

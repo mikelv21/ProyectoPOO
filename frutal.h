@@ -18,13 +18,15 @@ class Frutal: public Planta{
 		
 	public: 
 		
-		Frutal();
+		Frutal():Planta("vacio","vacio",0,0),fruto("vacio"),maduracion(0){};   //Constructorres por default
 		
-		Frutal(string _id, string _tipo, int _tiempoR, int _frecR, string _fruto, float _maduracion)
+		Frutal(string _fru, float _mad):Planta("vacio","vacio",0,0),fruto(_fru),maduracion(_mad){};
+		
+		Frutal(string _id, string _tipo, int _tiempoR, int _frecR, string _fru, float _mad)
 		:Planta(_id,_tipo,_tiempoR,_frecR){
 		
-			fruto = _fruto;
-			maduracion = _maduracion;
+			fruto = _fru;
+			maduracion = _mad;
 			
 		}
 		 
@@ -34,6 +36,10 @@ class Frutal: public Planta{
 			cout<<"Tiempo para que madure: "<<10-maduracion*3<<endl;
 			
 		}	
+		
+		string get_fruto(){
+			return fruto;
+		}
 		
 	
 };

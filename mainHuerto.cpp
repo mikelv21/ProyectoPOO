@@ -12,56 +12,64 @@ using namespace std;
 #include "reloj.h"
 #include "humedad.h"
 #include "bomba.h"
-#include "llave.h"
-#include "huerto.h"     // esta es la clase a la que se pretende hacer agregacion
+#include "llave.h"		//Se importaron anteriormente las clases con las que se trabajan
+#include "huerto.h"     //Esta es la clase a la que se hace la agregacion
 
 int main(){
 	
-	/*En este segundo avance me di a la tarea de incluir la herencia a mi codigo
-	De la clase planta, actuadores y sensores a dos clases hijas cada una.
-	
-	IMPORTANTE: Este main es 100 por ciento funcional y sirve para mostrar TODAS las 
-	clases que usare en mi programa (incluida la herencia), pues se creo al menos 
-	un objeto de cada una y se mostraron sus respectivas funciones.
-	
-	El problema profesor, es que no esta apegado aun al UML ya que no pude solucionar
-	un error a la hora de intentar la agregacion, por lo que de ser posible me gustaria
-	ver si me puede ayudar en una sesion de asesoria.
+	/*NOTA: A continuacion se crearan los objetos a utilizar en el programa, ademas de mostrar
+			sus principales caracteristicas o funcinoes, esta parte equivaldria al "set-up" del
+			programa principal aplicado en microcontroladores.
 	*/
 	
-	
+	cout<<"Se crearon los siguientes objetos:"<<endl;
+		
 	Frutal fresa1("Fresa 1","Frutal",10,1,"fresas",0.12);    //creo un objeto de la clase frutal
-	fresa1.mostrarCaracteristicas();                         //muestro sus caracteristicas
-	fresa1.consultaMaduracion();
-	
+	Frutal cerezo1("Cerezo 1","Frutal",15,1,"cerezos",0.03);
+	fresa1.mostrarCaracteristicas();                         //Para fines demostrativos
+													 //Muestro las caracteristicas de un objeto
 	cout<<endl;
 	
-	Decorativa pasto("Pasto 1","Decorativa",30,1,22,0.1);   //creo un objeto de la clase decorativo
+	Decorativa pasto("pasto","Decorativa",45,1,22,0.1);   //creo un objeto de la clase decorativo
+	Decorativa palma1("palma","Decorativa",8,2,50,0.2);  //De igual manera se imprimen las caracteristicas
 	pasto.mostrarCaracteristicas();
-	pasto.get_altura();
 		
 	cout<<endl;
 	
-	Llave llave1("Llave para Frutal","Distribuir agua","1");  //creo un objeto de la clase llave
-	llave1.abrir();
-		
-	cout<<endl;
+	 //Se crean las llaves necesarias para alimentar nuestro huerto
 	
-	Bomba bomba("Bomba","Bombear agua");    //creo un objeto de la clase bomba
-	bomba.bombeando();
-		
-	cout<<endl;
+	Llave llave1("fresas","De fresas 1"); 
+	Llave llave2("palma","De palmas 1"); 
+	Llave llave3("pasto","Del pasto 1"); 
+	Llave llave4("cerezos","De cerezos 1"); 
 	
-	Reloj RTC("Tiempo",06,30,20);    //creo un objeto de la clase sensor reloj
+	Huerto huerto1;                    //Creo mi huerto
+	huerto1.agregarFrutal(fresa1);     //Le agrego mis plantas
+	huerto1.agregarDecorativa(pasto);
+	huerto1.agregarFrutal(cerezo1);
+	huerto1.agregarDecorativa(palma1);
+	
+	huerto1.agregarLlave(llave1);      //Le agrego mis llaves
+	huerto1.agregarLlave(llave2);
+	huerto1.agregarLlave(llave3);
+	huerto1.agregarLlave(llave4);
+	
+	huerto1.mostrarLista();
+	
+	Bomba bomba("Bomba general");    //creo un objeto de la clase bomba
+	
+	Reloj RTC("Tiempo",06,30,0);    //creo un objeto de la clase sensor reloj
+		
+	Humedad DHTC11("Humedad",20);  //Creo un objeto de la clase sensor humedad		
+	
+	//Aqui comienza el funcionamiento principal:  (en la declaracion de la funcion hay mas info)
+	
+	//De acuerdo a los parametros de los sensores empieza a regar
 	RTC.get_data();
 	
-	cout<<endl;
+	cout<<"La humedad es del: "<<DHTC11.get_data()<<"%"<<endl;
 	
-	Humedad DHTC11("Humedad",0);  //creo un objeto de la clase sensor humedad
-	DHTC11.get_data();
-		
-	cout<<endl;
-
+	huerto1.regar(bomba,RTC,DHTC11);
 	
 	return 0;
 }

@@ -21,7 +21,7 @@ class Planta{
 		
 	public:
 		
-		Planta();       //constructores
+		Planta(): id("vacio"),tipo("vacio"),tiempoRegado(0),frecuenciaRegado(0){};       //constructores
 		
 		Planta(string _id, string _tipo, int _tiempoR, int _frecR){
 		

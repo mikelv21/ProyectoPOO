@@ -13,29 +13,44 @@ class Reloj: public Sensor{
 	
 	private:
 		 
-		int hora;                 //atributos especificos de los relojes
+		int hora;            //Atributos especificos de los relojes
 		int minuto;
 		int segundos;
 		
 	public:
 		
-		Reloj();          //constructores
+		Reloj():Sensor("vacio",0),hora(0),minuto(0),segundos(0){};    //Constructorres por defaults
 		
-		Reloj(string _tipo, int _hora, int _minuto, int _segundos): Sensor(_tipo,0){
+		Reloj(int _hora, int _min, int _segs):Sensor("vacio",0),hora(_hora),minuto(_min),segundos(_segs){};
+			
+		Reloj(string _tipo, int _hora, int _min, int _segs): Sensor(_tipo,0){
 			
 			hora = _hora;
-			minuto = _minuto;
-			segundos = _segundos;
+			minuto = _min;
+			segundos = _segs;
 			
 		}
-		
-		void get_data(){         //metodo especifico del reloj el cual se sobreescribe al del sensor 
+	
+	//Metodo especifico del reloj el cual se sobreescribe al del sensor
+	
+		void get_data(){          
 			
 			cout<<"La hora es: "<<hora<<":" <<minuto<<":"<<segundos<<endl;
 			
 		}
-
 	
+		int get_hora(){
+			return hora;
+		}
+		
+		int get_minuto(){
+			return minuto;
+		}
+		
+		int get_segundos(){
+			return segundos;
+		}
+		
 };
 
 #endif

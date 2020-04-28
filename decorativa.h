@@ -11,14 +11,17 @@ Autor: José Miguel Luna Vega A01706424
 
 class Decorativa: public Planta{
 	
-	private:                     //atributos especificos de las plantas decorativas
+	private:                     //Atributos especificos de las plantas decorativas
 		
 		float altura;
 		float crecimiento;
 		
 	public: 
 		
-		Decorativa();
+		//Constructorres por default
+		Decorativa():Planta("vacio","vacio",0,0),altura(0),crecimiento(0){};     
+		
+		Decorativa(float _h, float _dh):Planta("vacio","vacio",0,0),altura(_h),crecimiento(_dh){};
 		
 		Decorativa(string _id, string _tipo, int _tiempoR, int _frecR, float _h, float _dh)
 		:Planta(_id,_tipo,_tiempoR,_frecR){
@@ -28,7 +31,7 @@ class Decorativa: public Planta{
 			
 		}
 		
-		void get_altura(){             //metodo necesario de las plantas decorativas
+		void get_altura(){             //Metodo necesario de las plantas decorativas
 			
 			cout<<"Su altura es de: "<<altura<<" cm."<<endl;
 			
